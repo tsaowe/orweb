@@ -1,0 +1,15 @@
+{
+  "name": "orcadt-web",
+  "version": "1.0.0",
+  "description": "official web for www.orcadt.com",
+  "main": "index.js",
+  "repository": "https://github.com/tsaowe/orweb.git",
+  "author": "max.cao <wei.cao@orcadt.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-ejs": "^4.1.1",
+    "koa-router": "^7.4.0",
+    "path": "^0.12.7"
+  }
+}
