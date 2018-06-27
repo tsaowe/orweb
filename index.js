@@ -14,8 +14,6 @@ app.use(ejsMiddleWare());
 app.use(route.routes()).use(route.allowedMethods());
 
 
-
-
 route.all('/', async ctx => {
     if (ctx.userAgent.isMobile) {
         ctx.render('view/mobile-app/index.html');
