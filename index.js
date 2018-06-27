@@ -2,15 +2,29 @@ const Koa = require('koa');
 const app = new Koa();
 const Router = require('koa-router');
 const route = new Router();
-const path = require('path');
-const viewFolder = path.join(__dirname, 'view');
+
+
+// import koa middle ware
+const userAgent = require('koa-useragent');
+const ejsMiddleWare = require('./src/ejs-middle-ware');
+
+// use koa middle ware
+app.use(userAgent);
+app.use(ejsMiddleWare());
+app.use(route.routes()).use(route.allowedMethods());
+
+
+
 
 route.all('/', async ctx => {
-    await ctx.render('page-list/user', {name: 'caowei'});
+    if (ctx.userAgent.isMobile) {
+        ctx.render('view/mobile-app/index.html');
+    } else {
+        ctx.render('view/web-app/index.html');
+    }
+
 });
 
-
-app.use(route.routes()).use(route.allowedMethods());
 
 const port = 3000;
 app.listen(port);
