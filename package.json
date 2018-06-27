@@ -1,10 +1,10 @@
 {
-  "name": "orcadt-web",
+  "name": "orweb",
   "version": "1.0.0",
-  "description": "official web for www.orcadt.com",
+  "description": "caowei",
   "main": "index.js",
   "repository": "https://github.com/tsaowe/orweb.git",
-  "author": "max.cao <wei.cao@orcadt.com>",
+  "author": "max.cao",
   "license": "MIT",
   "dependencies": {
     "koa": "^2.5.1",
