@@ -11,10 +11,12 @@ module.exports = () => {
          * @param template relative path of ejs file
          * @param data ejs template file data
          * @param options
+         *          cache:  true or not given, we may use redis or other technology to store result, todo
+         *
          * @returns {Promise<void>}
          *
          */
-        ctx.render = async (template, data, options) => {
+        ctx.render = async (template, data = {}, options = {}) => {
             let templatePath = path.join(__dirname, template);
             if (fs.existsSync(templatePath)) {
                 ctx.body = await ejs.renderFile(template, data)
